@@ -1,24 +1,29 @@
+import { Routes, Route, Link } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
+import DenseAppBar from './component/Nav';
+import SimpleContainer from "./Userultra";
+import SimplePaper from "./body";
+import { Button, Grid } from "@mui/material";
+import SimpleContainerload from "./Userload";
+import { Container } from "@mui/system";
+import EditModal from "./component/Modalupultra";
+import React, { useState, useEffect } from 'react';
+import Footer from "./component/footer";
+
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      
+      <DenseAppBar/>
+      <SimpleContainer/>
+      <SimpleContainerload />
+      <Footer/>
+      
     </div>
+    
   );
 }
 
