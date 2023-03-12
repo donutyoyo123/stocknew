@@ -22,6 +22,7 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import EditModal from "./component/Modalupultra";
 import { SettingsRemoteOutlined } from "@mui/icons-material";
 import SimpleContainerload from "./Userload";
+import swal from 'sweetalert2';
 
 export default function SimpleContainer() {
   const [items, setItems] = useState([]);
@@ -77,7 +78,7 @@ export default function SimpleContainer() {
       })
       .catch((error) => console.log("error", error));
   };
-
+          
   const Usersethigh = (id) => {
     var myHeaders = new Headers();
     myHeaders.append("accept", "*/*");
@@ -91,10 +92,18 @@ export default function SimpleContainer() {
     fetch(
       "http://localhost:8081/demo-ws/api/v1/setItemHigh?itemID=" + id,requestOptions
     )
-      .then((response) => response.json())
+      .then(response => { 
+        if (response.ok) {
+          (swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: 'Set Itemhigh Success...',
+          }));
+        }
+        response.json()})
       .then((result) => {
-        alert(result["message"]);
-        if (result.status === 200) {
+        alert(result["result"]);
+        if (result.status === '200') {
           UserGet();
         }
       })

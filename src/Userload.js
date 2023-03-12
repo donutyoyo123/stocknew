@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState,useEffect, useReducer } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -27,6 +27,7 @@ export default function SimpleContainerload() {
     const [items, setItems] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [modalData, setModalData] = useState({});
+    const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
 
     const handleEdit = (id) => {
       setModalData(id);
@@ -45,11 +46,12 @@ export default function SimpleContainerload() {
               setItems(result);
             }
           )
+          forceUpdate();
     }
     
     useEffect(() => {
         UserGet()
-      }, [])
+      }, [ignored])
     
       const [openModal, setOpenModal] = useState(false);
       const [openModalup, setOpenModalup] = useState(false);
