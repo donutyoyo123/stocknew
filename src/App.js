@@ -19,7 +19,6 @@ function App() {
       
       <DenseAppBar/>
       <SimpleContainer/>
-      <SimpleContainerload />
       <Footer/>
       
     </div>

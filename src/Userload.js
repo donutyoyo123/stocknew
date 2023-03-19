@@ -128,7 +128,7 @@ export default function SimpleContainerload() {
 
             <Box sx={{ display: 'flex', position: 'relative' ,  top: 79,left: 40, flexWrap: 'wrap', '& > :not(style)': { width: 200, height: 130, },}}>
 
-            <Paper elevation={3} className='Typename'><h1>{row.itemName}</h1></Paper>
+            <Paper elevation={3} ><h1 className='Typename'>{row.itemName}</h1></Paper>
 
             </Box>
 

@@ -23,6 +23,8 @@ import EditModal from "./component/Modalupultra";
 import { SettingsRemoteOutlined } from "@mui/icons-material";
 import SimpleContainerload from "./Userload";
 import swal from 'sweetalert2';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 export default function SimpleContainer() {
   const [items, setItems] = useState([]);
@@ -98,6 +100,7 @@ export default function SimpleContainer() {
             icon: 'success',
             title: 'Success',
             text: 'Set Itemhigh Success...',
+            
           }));
         }
         response.json()})
@@ -125,14 +128,23 @@ export default function SimpleContainer() {
       "http://localhost:8081/demo-ws/api/v1/setMaxDistance?itemID=" + id,
       requestOptions
     )
-      .then((response) => response.json())
-      .then((result) => {
-        alert(result["message"]);
-        if (result["status"] === "200") {
-          UserGet();
-        }
-      })
-      .catch((error) => console.log("error", error));
+    .then(response => { 
+      if (response.ok) {
+        (swal.fire({
+          icon: 'success',
+          title: 'Success',
+          text: 'Set Maxdis Success...',
+          
+        }));
+      }
+      response.json()})
+    .then((result) => {
+      alert(result["result"]);
+      if (result.status === '200') {
+        UserGet();
+      }
+    })
+    .catch((error) => console.log("error", error));
   };
 
   return (
@@ -152,8 +164,8 @@ export default function SimpleContainer() {
                   "& > :not(style)": { width: 200, height: 130 },
                 }}
               >
-                <Paper elevation={3} className="Typename">
-                  <h1>{row.itemName}</h1>
+                <Paper elevation={3} >
+                  <h1 className="Typename">{row.itemName}</h1>
                 </Paper>
               </Box>
 
@@ -164,7 +176,7 @@ export default function SimpleContainer() {
                   top: 84,
                   left: 40,
                   flexWrap: "wrap",
-                  "& > :not(style)": { p: 1, width: 130, height: 20 },
+                  "& > :not(style)": { p: 1, width: 135, height: 20 },
                 }}
               >
                 <Paper elevation={3}> Amount : {row.amount}</Paper>
@@ -202,7 +214,7 @@ export default function SimpleContainer() {
                   position: "relative",
                   top: 52,
                   left: 40,
-                  flexWrap: { width: 76, height: 28 },
+                  flexWrap: { width: 200, height: 28 },
                 }}
                 onClick={() => handleEdit(row.itemID)}
               >
@@ -210,7 +222,7 @@ export default function SimpleContainer() {
               </Button>
               
 
-              <Button
+              {/*<Button
                 variant="contained"
                 sx={{
                   bgcolor: "#FA7373",
@@ -223,7 +235,7 @@ export default function SimpleContainer() {
                 onClick={() => UserDelete(row.itemID)}
               >
                 Del
-              </Button>
+              </Button>*/}
               <Box>
                 <Button
                   variant="contained"
@@ -231,7 +243,7 @@ export default function SimpleContainer() {
                     bgcolor: "#FA7373",
                     display: "flex",
                     position: "relative",
-                    top: 28,
+                    top: 55,
                     left: 40,
                     flexWrap: { width: 105, height: 28 },
                   }}
@@ -248,7 +260,7 @@ export default function SimpleContainer() {
                     bgcolor: "#FA7373",
                     display: "flex",
                     position: "relative",
-                    top: 0,
+                    top: 27,
                     left: 150,
                     flexWrap: { width: 90, height: 28 },
                   }}

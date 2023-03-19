@@ -5,11 +5,12 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Container } from '@mui/system';
 
 
 export default function DenseAppBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <React.Fragment sx={{ flexGrow: 1 }}>
       <AppBar position="static" className='bg'>
         <Toolbar variant="dense">
         </Toolbar>
@@ -24,7 +25,7 @@ export default function DenseAppBar() {
       </AppBar>
 
       
-    </Box>
+    </React.Fragment>
     
   );
 }
