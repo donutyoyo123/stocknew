@@ -10,17 +10,31 @@ import { Container } from "@mui/system";
 import EditModal from "./component/Modalupultra";
 import React, { useState, useEffect } from 'react';
 import Footer from "./component/footer";
+import Sidebar1 from "./sidebar";
+import Sidebar2 from "./sidebar2";
+
 
 
 function App() {
   
   return (
-    <div >
+   
+    <div>
+      <div className="">
+      <div className="rectangle33"></div>
+      <div className="oNLINESTORE">ONLINE STOCK</div>
+      <div className="rectangle121"></div>
+      <div className="rectangle117"></div>
+      <div className="rectangle116"></div>
+      <div className="rectangle169"></div>
+      <div className="rectangle119"></div>
+      <div className="rectangle120"></div>
+
       
-      <DenseAppBar/>
       <SimpleContainer/>
-      <Footer/>
       
+      
+      </div>
     </div>
     
   );

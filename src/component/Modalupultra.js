@@ -6,6 +6,7 @@ import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import Stack from '@mui/material/Stack';
 import { Button } from '@mui/material';
+import swal from 'sweetalert2';        
 
 
 
@@ -44,18 +45,32 @@ function EditModal(props) {
     };
     
     fetch("http://localhost:8081/demo-ws/api/v1/editItem", requestOptions)
-      .then(response => response.text())
+    .then(response => { 
+      if (response.ok) {
+        (swal.fire({
+          icon: 'success',
+          title: 'แก้ไขข้อมูล เรียบร้อย..',
+          
+          
+        }));
+      }
+      else{
+        (swal.fire({
+          icon: 'error',
+          title: 'แก้ไขข้อมูล ผิดพลาด..',
+          
+        }));
+      }
+      response.json()})
       .then(result => {
-  alert(result['message'])
-  if (result['status']=== 'ok'){
-  <Stack sx={{ width: '100%' }} spacing={2}>
-    <Alert severity="success">
-      <AlertTitle>Success</AlertTitle>
-      This is a success alert — <strong>check it out!</strong>
-    </Alert>
-  </Stack>}})
-         
-.catch(error => console.log('error', error));
+        alert(result['message'])
+         {
+           
+           }
+          
+       })
+    .catch((error) => console.log("error", error));
+       
   }
   
   const [id, setItemID] = useState('');

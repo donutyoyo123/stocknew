@@ -10,9 +10,11 @@ import { Container } from '@mui/system';
 
 export default function DenseAppBar() {
   return (
-    <React.Fragment sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 ,fullWidth: true,
+      fullHeight: true,}}>
       <AppBar position="static" className='bg'>
         <Toolbar variant="dense">
+          
         </Toolbar>
       </AppBar>
 
@@ -25,7 +27,7 @@ export default function DenseAppBar() {
       </AppBar>
 
       
-    </React.Fragment>
+    </Box>
     
   );
 }

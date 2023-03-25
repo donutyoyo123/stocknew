@@ -98,8 +98,8 @@ export default function SimpleContainer() {
         if (response.ok) {
           (swal.fire({
             icon: 'success',
-            title: 'Success',
-            text: 'Set Itemhigh Success...',
+            title: 'เสร็จสิ้น!',
+            text: 'บันทึกความสูงสินค้า เรียบร้อย...',
             
           }));
         }
@@ -148,7 +148,7 @@ export default function SimpleContainer() {
   };
 
   return (
-    <Container className='bgcontain' sx = {{top: 10,}}>
+    <Container className=''>
       <Grid container spacing={{ xs: 4, md: 0 }}  justifyContent="center">
         {items.map((row) => {
           
@@ -158,7 +158,7 @@ export default function SimpleContainer() {
                 sx={{
                   display: "flex",
                   position: "relative",
-                  top: 79,
+                  top: 330,
                   left: 40,
                   flexWrap: "wrap",
                   "& > :not(style)": { width: 200, height: 130 },
@@ -173,7 +173,7 @@ export default function SimpleContainer() {
                 sx={{
                   display: "flex",
                   position: "relative",
-                  top: 84,
+                  top: 334,
                   left: 40,
                   flexWrap: "wrap",
                   "& > :not(style)": { p: 1, width: 135, height: 20 },
@@ -186,7 +186,7 @@ export default function SimpleContainer() {
                 sx={{
                   display: "flex",
                   position: "relative",
-                  top: 48,
+                  top: 298,
                   left: 194,
                   flexWrap: "wrap",
                   "& > :not(style)": { p: 1, width: 30, height: 20 },
@@ -212,7 +212,7 @@ export default function SimpleContainer() {
                   bgcolor: "#FA7373",
                   display: "flex",
                   position: "relative",
-                  top: 52,
+                  top: 303,
                   left: 40,
                   flexWrap: { width: 200, height: 28 },
                 }}
@@ -243,7 +243,7 @@ export default function SimpleContainer() {
                     bgcolor: "#FA7373",
                     display: "flex",
                     position: "relative",
-                    top: 55,
+                    top: 307,
                     left: 40,
                     flexWrap: { width: 105, height: 28 },
                   }}
@@ -260,7 +260,7 @@ export default function SimpleContainer() {
                     bgcolor: "#FA7373",
                     display: "flex",
                     position: "relative",
-                    top: 27,
+                    top: 279,
                     left: 150,
                     flexWrap: { width: 90, height: 28 },
                   }}
