@@ -90,6 +90,11 @@
 
 .bold {
   font-weight: 600;
+  
+}
+.boldSummit {
+
+  color: #F1A1A1;
 }
 
 @media screen and (max-width: 500px) {
@@ -130,13 +135,18 @@
   margin-left: auto;
 }
 
+
+
 .Typename{
-  font-size: 20px;
+  padding: 0%;
+  margin: 0;
+  font-size: 17px;
   font-family: Arial, Helvetica, sans-serif;
-  font-style: italic;
   text-align: center;
   justify-content: center;
   margin-top: 50px;
+  line-height: 1.3;
+  
 }
 
 

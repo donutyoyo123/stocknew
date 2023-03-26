@@ -88,8 +88,8 @@ function EditModal(props) {
           <div className='content'>
       <form onSubmit={handleSubmit}> 
   
-              <Typography variant="h6" gutterBottom>
-              Edit Product
+              <Typography  variant="h6" gutterBottom>
+              EDIT PRODUCT
               </Typography>
                   <Grid container spacing={2}>
                   <Grid item xs={12} md={6}>
@@ -100,8 +100,7 @@ function EditModal(props) {
                   </Grid>
                   </Grid>
                   <div className='btnContainer'>
-                  <Button className='bold' type="submit">YES</Button>
-                  
+                  <Button className='bold' type="submit" sx={{bgcolor: "#0FA065",}}>YES</Button>
                   </div>
                   
                   </form> 

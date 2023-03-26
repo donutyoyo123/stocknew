@@ -33,6 +33,16 @@ export default function SimpleContainer() {
   const [openModal, setOpenModal] = useState(false);
   const [itemID, setItemID] = useState("");
   const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
+  const [showButton, setShowButton] = useState(false);
+  const [itemId, setItemId] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [showSubButtons, setShowSubButtons] = useState(false);
+
+  const handleButtonClick = (itemID) => {
+    
+    setShowSubButtons(itemID === showSubButtons ? null : itemID);
+  };
+  
 
   const handleEdit = (id) => {
     setModalData(id);
@@ -99,7 +109,7 @@ export default function SimpleContainer() {
           (swal.fire({
             icon: 'success',
             title: 'เสร็จสิ้น!',
-            text: 'บันทึกความสูงสินค้า เรียบร้อย...',
+            text: 'ตั้งค่าความสูงสินค้า เรียบร้อย!',
             
           }));
         }
@@ -132,8 +142,8 @@ export default function SimpleContainer() {
       if (response.ok) {
         (swal.fire({
           icon: 'success',
-          title: 'Success',
-          text: 'Set Maxdis Success...',
+          title: 'เสร็จสิ้น!',
+          text: 'ตั้งค่าความสูงของชั้นวางสินค้า เรียบร้อย!',
           
         }));
       }
@@ -148,11 +158,11 @@ export default function SimpleContainer() {
   };
 
   return (
-    <Container className=''>
-      <Grid container spacing={{ xs: 4, md: 0 }}  justifyContent="center">
-        {items.map((row) => {
+    <Container className='' >
+      <Grid container spacing={{ xs: 3}}  justifyContent="center">
+        {items.map((row) => (
           
-          return (
+          
             <Grid item xs={3}  key={row.itemID}>
               <Box
                 sx={{
@@ -161,11 +171,14 @@ export default function SimpleContainer() {
                   top: 330,
                   left: 40,
                   flexWrap: "wrap",
-                  "& > :not(style)": { width: 200, height: 130 },
+                  
+                  "& > :not(style)": { width: 200, height: 130, },
+                  width: "200px",
+
                 }}
               >
                 <Paper elevation={3} >
-                  <h1 className="Typename">{row.itemName}</h1>
+                  <h5 className="Typename">{row.itemName}</h5>
                 </Paper>
               </Box>
 
@@ -177,9 +190,10 @@ export default function SimpleContainer() {
                   left: 40,
                   flexWrap: "wrap",
                   "& > :not(style)": { p: 1, width: 135, height: 20 },
+                  width: "200px",
                 }}
               >
-                <Paper elevation={3}> Amount : {row.amount}</Paper>
+                <Paper elevation={3}> จำนวนสินค้า : {row.amount}</Paper>
               </Box>
 
               <Box
@@ -190,6 +204,7 @@ export default function SimpleContainer() {
                   left: 194,
                   flexWrap: "wrap",
                   "& > :not(style)": { p: 1, width: 30, height: 20 },
+                  width: "200px",
                 }}
               >
                 <Paper elevation={3}>
@@ -209,7 +224,7 @@ export default function SimpleContainer() {
               <Button
                 variant="contained"
                 sx={{
-                  bgcolor: "#FA7373",
+                  bgcolor: "#0FA065",
                   display: "flex",
                   position: "relative",
                   top: 303,
@@ -218,7 +233,7 @@ export default function SimpleContainer() {
                 }}
                 onClick={() => handleEdit(row.itemID)}
               >
-                Edit
+                แก้ไขข้อมูล
               </Button>
               
 
@@ -236,43 +251,69 @@ export default function SimpleContainer() {
               >
                 Del
               </Button>*/}
-              <Box>
-                <Button
-                  variant="contained"
-                  sx={{
-                    bgcolor: "#FA7373",
-                    display: "flex",
-                    position: "relative",
-                    top: 307,
-                    left: 40,
-                    flexWrap: { width: 105, height: 28 },
-                  }}
-                  onClick={() => Usersethigh(row.itemID)}
-                >
-                  {" "}
-                  SET HIGH{" "}
-                </Button>
-                </Box>
-                <Box>
-                <Button
-                  variant="contained"
-                  sx={{
-                    bgcolor: "#FA7373",
-                    display: "flex",
-                    position: "relative",
-                    top: 279,
-                    left: 150,
-                    flexWrap: { width: 90, height: 28 },
-                  }}
-                  onClick={() => Usersetdis(row.itemID)}
-                >
-                  {" "}
-                  SETDIS{" "}
-                </Button>
-              </Box>
-            </Grid>
-          );
-        })}
+              <div style={{ position: 'relative' }}>
+              <Button  
+        variant="contained"
+        sx={{
+          bgcolor: "#0FA065",
+          display: "flex",
+          position: "absolute",
+          top: 307,
+          left: 40,
+          flexWrap: { width: 200, height: 28 },
+        }}
+        onClick={() => handleButtonClick(row.itemID)}
+      >
+        {" "}
+        ตั้งค่า{" "}
+      </Button>
+
+      {showSubButtons === row.itemID && (
+        <div>
+          
+            <Button 
+              variant="contained"
+              sx={{
+                bgcolor: "#006553",
+                display: "flex",
+                position: "absolute",
+                top: 339,
+                left: 40,
+                zIndex: 100,
+                flexWrap: { width: 200, height: 28 },
+              }}
+              onClick={() => Usersethigh(row.itemID)}
+            >
+              {" "}
+              ตั้งค่าความสูงสินค้า{" "}
+            </Button>
+
+            <Button 
+              variant="contained"
+              sx={{
+                bgcolor: "#006553",
+                display: "flex",
+                position: "absolute",
+                top: 371,
+                left: 40,
+                zIndex: 100,
+                flexWrap: { width: 200, height: 28 },
+              }}
+              onClick={() => Usersetdis(row.itemID)}
+            >
+              {" "}
+              ตั้งค่าความสูงชั้นวาง{" "}
+            </Button>
+          
+        </div>
+        
+      )}
+              </div>
+              
+              
+              </Grid>
+          
+          ))}
         {showModal && (
                 <EditModal
                   id={modalData}
@@ -282,7 +323,6 @@ export default function SimpleContainer() {
               )}
         
       </Grid>
-      
     </Container>
   );
 }

@@ -55,7 +55,7 @@
   top: 372px;
   width: 23px;
   height: 652px;
-  background-color: #ff7b7b;
+  background-color: #9ED5C5;
 }
 .rectangle116 {
   position: fixed;
@@ -63,7 +63,7 @@
   top: 372px;
   width: 23px;
   height: 652px;
-  background-color: #ff7b7b;
+  background-color: #9ED5C5;
 }
 
 .rectangle169 {
@@ -71,7 +71,7 @@
   top: 940px;
   width: 2000px;
   height: 30px;
-  background-color: #ff7b7b;
+  background-color: #9ED5C5;
 }
 
 .rectangle119 {
@@ -81,7 +81,7 @@
   top: 354px;
   width: 32px;
   height: 20px;
-  background-color: #ff7b7b;
+  background-color: #9ED5C5;
   transform: matrix(0.8502, 0.5265, -0.5265, 0.8502, 0, 0);
 }
 
@@ -92,7 +92,7 @@
   top: 369.50px;
   width: 32px;
   height: 20px;
-  background-color: #ff7b7b;
+  background-color: #9ED5C5;
   transform: matrix(-0.8223, 0.569, -0.569, -0.8223, 0, 0);
 }
 
@@ -103,7 +103,7 @@
   width: 1300px;
   height: 600px;
   border-radius: 10px;
-  background-color: #fca8a8;
+  background-color: #DEF5E5;
 }
 
 .rectangle33 {
@@ -112,7 +112,7 @@
   top: 0;
   width: 2000px;
   height: 259px;
-  background-color: #de4747;
+  background-color: #8EC3B0;
 }
 
 .rectangle129 {
@@ -141,3 +141,73 @@
   white-space: nowrap;
   flex-direction: column;
 }
+
+.Edit {
+  color: #fff;
+  font-style: italic;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+
+button[data-testid="button"] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+button[data-testid="button"]:hover {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
+
+.button-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.main-button {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.main-button.hovered {
+  background-color: #dc3545;
+}
+
+.sub-buttons {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 4px;
+}
+
+.sub-button {
+  background-color: #FA7373;
+  color: #fff;
+  padding: 4px;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.sub-button:last-child {
+  border-radius: 0 0 4px 4px;
+  border-bottom: none;
+}
+
