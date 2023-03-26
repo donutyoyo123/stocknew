@@ -23,7 +23,7 @@ import EditModal from "./component/Modalupultra";
 import { SettingsRemoteOutlined } from "@mui/icons-material";
 import SimpleContainerload from "./Userload";
 import swal from 'sweetalert2';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 
 export default function SimpleContainer() {
@@ -168,7 +168,7 @@ export default function SimpleContainer() {
                 sx={{
                   display: "flex",
                   position: "relative",
-                  top: 330,
+                  top: 10,
                   left: 40,
                   flexWrap: "wrap",
                   
@@ -177,7 +177,7 @@ export default function SimpleContainer() {
 
                 }}
               >
-                <Paper elevation={3} >
+                <Paper elevation={3} > 
                   <h5 className="Typename">{row.itemName}</h5>
                 </Paper>
               </Box>
