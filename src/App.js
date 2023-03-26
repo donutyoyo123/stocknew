@@ -20,21 +20,20 @@ function App() {
   return (
    
     <div>
-      <div className="">
-      <div className="rectangle33"></div>
-      <div className="oNLINESTORE">ONLINE STOCK</div>
-      <div className="rectangle121"></div>
+      <div className="bgbig">
+      
+      
       <div className="rectangle117"></div>
       <div className="rectangle116"></div>
       <div className="rectangle169"></div>
       <div className="rectangle119"></div>
       <div className="rectangle120"></div>
-
-      
+      </div>
+      <DenseAppBar/>
       <SimpleContainer/>
       
       
-      </div>
+      
     </div>
     
   );

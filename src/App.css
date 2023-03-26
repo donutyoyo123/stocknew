@@ -77,8 +77,8 @@
 .rectangle119 {
   transform-origin: top left;
   position: absolute;
-  left: -4.4702px;
-  top: 354px;
+  left: -12.4702px;
+  top: 347px;
   width: 32px;
   height: 20px;
   background-color: #9ED5C5;
@@ -97,9 +97,9 @@
 }
 
 .rectangle121 {
-  position: fixed;
-  left: 275px;
-  top: 300px;
+  position: relative;
+  left: 0px;
+  top: 200px;
   width: 1300px;
   height: 600px;
   border-radius: 10px;
@@ -107,7 +107,7 @@
 }
 
 .rectangle33 {
-  position: fixed;
+  position: static;
   left: 0;
   top: 0;
   width: 2000px;
@@ -135,7 +135,7 @@
     'Liberation Sans', sans-serif;
   position: absolute;
   left: 670px;
-  top: 136px;
+  top: 70px;
   width: min-content;
   height: min-content;
   white-space: nowrap;
@@ -211,3 +211,7 @@ button[data-testid="button"]:hover {
   border-bottom: none;
 }
 
+.bgbig { 
+  position: relative;
+
+}

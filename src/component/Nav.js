@@ -10,17 +10,14 @@ import { Container } from '@mui/system';
 
 export default function DenseAppBar() {
   return (
-    <Box sx={{ flexGrow: 1 ,fullWidth: true,
-      fullHeight: true,}}>
+    <Box >
       <AppBar position="static" className='bg'>
-        <Toolbar variant="dense">
-          
-        </Toolbar>
+        
       </AppBar>
 
-      <AppBar position="static" sx={{ bgcolor: '#DE4747'}}>
+      <AppBar className='rectangle33' sx={{bgcolor:"#8EC3B0",}}>
         <Toolbar variant="dense" >
-          <h1 className='bgtext'>
+          <h1 className='oNLINESTORE'>
             ONLINE STOCK
           </h1>
         </Toolbar>
